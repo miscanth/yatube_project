@@ -18,6 +18,7 @@ from django.urls import include, path
 
 urlpatterns = [
     # Сначала проверяем все пути, которые есть в приложении posts
-    path('', include('posts.urls')),
+    path('', include('posts.urls', namespace='posts')),
+    path('auth/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
